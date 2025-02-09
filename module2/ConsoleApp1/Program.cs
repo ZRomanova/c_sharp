@@ -30,7 +30,7 @@ namespace ConsoleApp1
             Console.WriteLine("Баллы по программированию: {0:0.00}", programmingScore);
             Console.WriteLine("Баллы по математике: {0:0.00}", mathScore);
             Console.WriteLine("Баллы по физике: {0:0.00}", physicsScore);
-
+            Console.Readkey();
 
             double totalScore; 
             double averageScore;
