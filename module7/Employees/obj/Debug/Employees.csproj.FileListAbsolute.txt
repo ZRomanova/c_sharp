@@ -1,0 +1,8 @@
+C:\Users\roman\Desktop\code\c_sharp\module7\Employees\bin\Debug\Employees.exe.config
+C:\Users\roman\Desktop\code\c_sharp\module7\Employees\bin\Debug\Employees.exe
+C:\Users\roman\Desktop\code\c_sharp\module7\Employees\bin\Debug\Employees.pdb
+C:\Users\roman\Desktop\code\c_sharp\module7\Employees\obj\Debug\Employees.csproj.AssemblyReference.cache
+C:\Users\roman\Desktop\code\c_sharp\module7\Employees\obj\Debug\Employees.csproj.SuggestedBindingRedirects.cache
+C:\Users\roman\Desktop\code\c_sharp\module7\Employees\obj\Debug\Employees.csproj.CoreCompileInputs.cache
+C:\Users\roman\Desktop\code\c_sharp\module7\Employees\obj\Debug\Employees.exe
+C:\Users\roman\Desktop\code\c_sharp\module7\Employees\obj\Debug\Employees.pdb
