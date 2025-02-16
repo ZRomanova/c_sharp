@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace Employees
 {
@@ -46,8 +47,47 @@ namespace Employees
         static void DisplayRecords()
         {
             Worker[] workers = repository.GetAllWorkers();
-            ShowEmployees(workers);
 
+            Console.WriteLine("\nВыберите поле сортировки:");
+            Console.WriteLine("1 - ID");
+            Console.WriteLine("2 - Дата создания записи");
+            Console.WriteLine("3 - ФИО");
+            Console.WriteLine("4 - Возраст");
+            Console.WriteLine("5 - Рост");
+            Console.WriteLine("6 - Дата рождения");
+            Console.WriteLine("7 - Место рождения");
+            Console.WriteLine("0 - По умолчанию");
+
+            string choice = Console.ReadLine();
+            IOrderedEnumerable<Worker> sortedWorkers;
+
+            switch (choice)
+            {
+                case "2":
+                    sortedWorkers = workers.OrderBy(w => w.DateAdded);
+                    break;
+                case "3":
+                    sortedWorkers = workers.OrderBy(w => w.FullName);
+                    break;
+                case "4":
+                    sortedWorkers = workers.OrderBy(w => w.Age);
+                    break;
+                case "5":
+                    sortedWorkers = workers.OrderBy(w => w.Height);
+                    break;
+                case "6":
+                    sortedWorkers = workers.OrderBy(w => w.DateOfBirth);
+                    break;
+                case "7":
+                    sortedWorkers = workers.OrderBy(w => w.PlaceOfBirth);
+                    break;
+                case "1":
+                default:
+                    sortedWorkers = workers.OrderBy(w => w.ID);
+                    break;
+            }
+
+            ShowEmployees(sortedWorkers);
         }
 
         static void AddEmployee()
@@ -88,11 +128,11 @@ namespace Employees
             DateTime toDate = DateTime.Parse(Console.ReadLine());
 
             Worker[] workers = repository.GetWorkersBetweenTwoDates(fromDate, toDate);
-            ShowEmployees(workers);
+            ShowEmployees(workers.OrderBy(w => w.DateAdded));
         }
 
 
-        private static void ShowEmployees(Worker[] workers)
+        private static void ShowEmployees(IOrderedEnumerable<Worker> workers)
         {
             foreach (var worker in workers)
             {
